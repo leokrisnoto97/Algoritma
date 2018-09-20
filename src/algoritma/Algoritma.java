@@ -45,4 +45,35 @@ public class Algoritma {
         }
         return numberlist;
     }
+    
+    /**
+     * Function untuk menghitung banyaknya pecahan uang berdasarkan nominal
+     * @param nominal - besar nominal uang yang akan dihitung (dalam rupiah)
+     * @return hasil hitung pecahan berdasarkan mata uang yang beredar
+     */
+    public String HitungPecahan(int nominal) {
+        String[] pecahan = {"100", "200", "500", "1.000", "2.000", "5.000", "10.000", "20.000", "50.000", "100.000"};
+        String hasil = "", koin = " koin Rp. ", lembar = " lembar Rp. ";
+        if (nominal < 200)
+            hasil = (nominal / 100) + koin + pecahan[0] + "\n";
+        else if (nominal < 500)
+            hasil = HitungPecahan(nominal % 200) + (nominal / 200) + koin + pecahan[1] + "\n";
+        else if (nominal < 1000)
+            hasil = HitungPecahan(nominal % 500) + (nominal / 500) + koin + pecahan[2] + "\n";
+        else if (nominal < 2000)
+            hasil = HitungPecahan(nominal % 1000) + (nominal / 1000) + lembar + pecahan[3] + "\n";
+        else if (nominal < 5000)
+            hasil = HitungPecahan(nominal % 2000) + (nominal / 2000) + lembar + pecahan[4] + "\n";
+        else if (nominal < 10000)
+            hasil = HitungPecahan(nominal % 5000) + (nominal / 5000) + lembar + pecahan[5] + "\n";
+        else if (nominal < 20000)
+            hasil = HitungPecahan(nominal % 10000) + (nominal / 10000) + lembar + pecahan[6] + "\n";
+        else if (nominal < 50000)
+            hasil = HitungPecahan(nominal % 20000) + (nominal / 20000) + lembar + pecahan[7] + "\n";
+        else if (nominal < 100000)
+            hasil = HitungPecahan(nominal % 50000) + (nominal / 50000) + lembar + pecahan[8] + "\n";
+        else if (nominal >= 100000)
+            hasil = HitungPecahan(nominal % 100000) + (nominal / 100000) + lembar + pecahan[9];
+        return hasil;
+    }
 }

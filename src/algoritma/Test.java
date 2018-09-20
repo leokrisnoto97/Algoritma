@@ -36,6 +36,14 @@ public class Test {
         List<Integer> listFibo = algo.getFibonacci(paramfibo);
         for(int i = 0; i < listFibo.size(); i++) System.out.print(listFibo.get(i) + " ");
         System.out.println("");
+        
+        /**
+         * Memanggil Fungsi Hitung Pecahan
+         */
+        System.out.println("\n-- HITUNG PECAHAN --");
+        System.out.print("Masukkan nominal uang : ");
+        int nominal = scp.nextInt();
+        System.out.println(algo.HitungPecahan(nominal));
     }
     
 }
