@@ -66,11 +66,19 @@ public class Test {
                 System.out.println(algo.random_char(jumlah));
                 break;
             case 5:
+                /**
+                * Melakukan input angka yang ingin dihitung faktorialnya
+                * Memanggil fungsi Faktorial
+                */
                 System.out.println("Masukkan angka: ");
                 int n= scp.nextInt();
                 System.out.println(algo.Faktorial(n));
                 break;
             case 6:
+                /**
+                * Melakukan input nilai n dan r yang akan dihitung permutasi dan kombinasinya
+                * Memanggil fungsi Permutasi dan Kombinasi
+                */
                 System.out.println("Masukkan n: ");
                 float a= scp.nextFloat();
                 System.out.println("Masukkan r: ");
@@ -79,6 +87,10 @@ public class Test {
                 System.out.println("Kombinasi: "+algo.Kombinasi(a,b));
                 break;
             case 7:
+                /**
+                * Melakukan input bilangan beserta bilangan pangkatnya
+                * Memanggil fungsi Pangkat
+                */
                 System.out.println("Masukkan bilangan: ");
                 float x=scp.nextFloat();
                 System.out.println("Masukkan pangkat: ");
