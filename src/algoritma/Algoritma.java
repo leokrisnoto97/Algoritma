@@ -5,6 +5,9 @@
  */
 package algoritma;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author chochong
@@ -22,5 +25,23 @@ public class Algoritma {
         if(ctr > 1) jenis = "Bukan Prima";
         else jenis = "Prima";
         return jenis;
+    }
+    
+    /**
+     * Fibonacci number sampai angka tertentu
+     * @param max batas maksimal angka fibonacci
+     * @return kumpulan angka fibonacci berupa List
+     */
+    public List<Integer> getFibonacci(int max){
+        List<Integer> numberlist = new ArrayList<>();
+        numberlist.add(1);
+        numberlist.add(1);
+        int temp = numberlist.get(1) + numberlist.get(0);
+        while(temp <= max){
+            numberlist.add(temp);
+            int last = numberlist.size();
+            temp = numberlist.get(last - 1) + numberlist.get(last - 2);
+        }
+        return numberlist;
     }
 }
