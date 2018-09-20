@@ -1,10 +1,10 @@
-
 package algoritma;
 
 import java.util.List;
 import java.util.Scanner;
 
 public class Test {
+
     /**
      * @param args the command line arguments
      */
@@ -15,6 +15,7 @@ public class Test {
         System.out.println("1. Cek Bilangan Prima");
         System.out.println("2. Fibonacci Number");
         System.out.println("3. Hitung Pecahan");
+        System.out.println("4. Random Character");
         System.out.print("\nPilihan Menu: ");
         int menu = scp.nextInt();
         switch(menu){
@@ -51,6 +52,15 @@ public class Test {
                 System.out.print("Masukkan nominal uang : ");
                 int nominal = scp.nextInt();
                 System.out.println(algo.HitungPecahan(nominal));
+                break;
+            case 4:
+                /**
+                * memasukkan jumlah random yang akan ditampilkan
+                * memanggil method random_char dari kelas Algoritma.java
+                */
+                System.out.print("jumlah random : ");
+                int jumlah = scp.nextInt();
+                System.out.println(algo.random_char(jumlah));
                 break;
             default:
                 System.out.println("Nomor yang anda pilih tidak ada dalam menu.");
