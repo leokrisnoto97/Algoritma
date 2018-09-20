@@ -8,6 +8,7 @@ package algoritma;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  *
@@ -75,5 +76,22 @@ public class Algoritma {
         else if (nominal >= 100000)
             hasil = HitungPecahan(nominal % 100000) + (nominal / 100000) + lembar + pecahan[9];
         return hasil;
+    }
+    
+    /**
+     * digunakan untuk memanggil nilai random dari karakter
+     * @param jumlah digunakan untuk menampung jumlah angka yang akan di tampilkan
+     * @variabel bahan digunakan untuk menyimpan karakter yang akan di random
+     * @variabel randomSting digunakan untuk menyimpan hasil dari charakter yang di random
+     * @return randomSting yang diisi dengan nilai random yang sudah dibentuk
+     */
+    public String random_char(int jumlah){
+        String bahan = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        String randomString = "";
+        Random ob_rand = new Random();
+        char[] simpan = new char[jumlah];
+        for (int i = 0; i < jumlah; i++)simpan[i]=bahan.charAt(ob_rand.nextInt(bahan.length()));
+        for (int i = 0; i < simpan.length; i++)randomString += simpan[i];
+        return randomString;
     }
 }
