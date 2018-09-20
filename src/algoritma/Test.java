@@ -16,6 +16,9 @@ public class Test {
         System.out.println("2. Fibonacci Number");
         System.out.println("3. Hitung Pecahan");
         System.out.println("4. Random Character");
+        System.out.println("5. Bilangan Faktorial");
+        System.out.println("6. Hitung Permutasi dan Kombinasi");
+        System.out.println("7. Hitung Pangkat");
         System.out.print("\nPilihan Menu: ");
         int menu = scp.nextInt();
         switch(menu){
@@ -61,6 +64,26 @@ public class Test {
                 System.out.print("jumlah random : ");
                 int jumlah = scp.nextInt();
                 System.out.println(algo.random_char(jumlah));
+                break;
+            case 5:
+                System.out.println("Masukkan angka: ");
+                int n= scp.nextInt();
+                System.out.println(algo.Faktorial(n));
+                break;
+            case 6:
+                System.out.println("Masukkan n: ");
+                float a= scp.nextFloat();
+                System.out.println("Masukkan r: ");
+                float b= scp.nextFloat();
+                System.out.println("Permutasi: "+algo.Permutasi(a,b));
+                System.out.println("Kombinasi: "+algo.Kombinasi(a,b));
+                break;
+            case 7:
+                System.out.println("Masukkan bilangan: ");
+                float x=scp.nextFloat();
+                System.out.println("Masukkan pangkat: ");
+                float y=scp.nextFloat();
+                System.out.println("Hasil dari bil "+x+" pangkat "+y+" adalah "+algo.Pangkat(x,y));
                 break;
             default:
                 System.out.println("Nomor yang anda pilih tidak ada dalam menu.");

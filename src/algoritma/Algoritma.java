@@ -94,4 +94,67 @@ public class Algoritma {
         for (int i = 0; i < simpan.length; i++)randomString += simpan[i];
         return randomString;
     }
+    /**
+     * Fungsi untuk menghitung faktorial 
+     * @param n bilangan yang nantinya akan dicari faktorialnya
+     * @return x hasil faktorial dari bilangan n
+     */
+    public int Faktorial(int n){
+        int x=1;
+        int i;
+        for(i=n; i>=1; i--) x*=i;
+        return x;
+    } 
+    /**
+     * Fungsi untuk menghitung permutasi berdasarkan 2 bilangan yg sudah dimasukkan
+     * @param a bilangan sebagai nilai n
+     * @param b bilangan sebagai nilai r
+     * @return hasil merupakan hasil dari hitungan permutasi
+     */
+    public float Permutasi(float a, float b){
+        float n=1;
+        float nr=1;
+        float i,j,k;
+        for(i=a; i>=1; i--)n*=i;
+        j=(a-b);
+        for(k=j; k>=1; k--)nr*=k;
+        float hasil=n/nr;
+        return hasil;
+    }
+    /**
+     * Fungsi untuk menghitung kombinasi berdasarkan 2 bilangan yg sudah dimasukkan
+     * @param a bilangan sebagai nilai n
+     * @param b bilangan sebagai nilai r
+     * @return hasil merupakan hasil dari hitungan kombinasi
+     */
+    public float Kombinasi(float a, float b){
+        float n=1;
+        float r=1;
+        float nr=1;
+        float i,j,k,l;
+        for(i=a; i>=1; i--)n*=i;
+        for(j=b; j>=1; j--)r*=j;
+        k=(a-b);
+        for(l=k; l>=1; l--)nr*=l;
+        float hasil=n/(r*nr);
+        return hasil;
+    }
+    /**
+     * Fungsi untuk menghitung bilangan berpangkat
+     * @param x sebagai bilangan utama
+     * @param y sebagai pangkat
+     * @return hasil merupakan hasil perhitungan perpangkatan
+     */
+    public float Pangkat(float x, float y){
+        float hasil=x;
+        int i;
+         if (y>0){
+            for (i = 1; i < y; i++)hasil*=x;
+            return hasil;
+        }else
+            for (i = 1; i < y*-1; i++)hasil*=x;
+            hasil= 1/hasil;
+            return hasil;  
+    }
+   
 }
