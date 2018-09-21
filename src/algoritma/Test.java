@@ -154,7 +154,7 @@ public class Test {
                 System.out.println("\n-- Hexadecimal to Octal --");
                 System.out.print("Masukkan Bilangan Hexadesimal: ");
                 String octal = scp.next();
-                System.out.println("Nilai desimal untuk angka Octal " + octal + " adalah " + algo.hex2decimal(octal.toUpperCase()));
+                System.out.println("Nilai desimal untuk angka Octal " + octal + " adalah " + algo.hex2octal(octal.toUpperCase()));
 
                 /**
                  * Untuk Memanggil Fungsi Binary to Hexadecimal

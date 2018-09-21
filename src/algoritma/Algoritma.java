@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-//HIDUP TANPA CINTA, BAGAI TAMAN TAK BERBUNGA
 package algoritma;
 
 import java.util.ArrayList;
@@ -286,7 +285,6 @@ public class Algoritma {
         String binVal;
         for (int i = 0; i < hex.length(); i++) {
             char hexChar = hex.charAt(i);
-
             switch (hexChar) {
                 case ('0'):
                     binVal = "0000";
@@ -350,16 +348,19 @@ public class Algoritma {
      * @param OctalNumber
      * @return
      */
-    public int convert2Octal(int OctalNumber) {
-        int counter = 0;
-        int result = 0;
-        while (OctalNumber != 0) {
-            int temp = (int) ((OctalNumber % 8) * Math.pow(10, counter));
-            counter++;
-            result += temp;
-            OctalNumber /= 8;
-        }
-        return result;
+    public int hex2octal(String nilaihex) {
+     String a = hexToBinary(nilaihex);
+       int b = BinarytoOctal(Integer.parseInt(a));
+       
+//int counter = 0;
+        //int result = 0;
+        //while (OctalNumber != 0) {
+          //  int temp = (int) ((OctalNumber % 8) * Math.pow(10, counter));
+            //counter++;
+           // result += temp;
+            //OctalNumber /= 8;
+       // }
+       return b;
     }
 
     /**
