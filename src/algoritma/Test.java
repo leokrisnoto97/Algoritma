@@ -1,6 +1,6 @@
 package algoritma;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Test {
    
@@ -27,4 +27,3 @@ public class Test {
         }
     }
 }
-    
