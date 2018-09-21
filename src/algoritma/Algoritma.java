@@ -8,6 +8,7 @@ package algoritma;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import jdk.nashorn.internal.objects.NativeString;
 
 /**
  *
@@ -45,13 +46,12 @@ public class Algoritma {
      */
     public List<Integer> getFibonacci(int max) {
         List<Integer> numberlist = new ArrayList<>();
-        numberlist.add(1);
-        numberlist.add(1);
-        int temp = numberlist.get(1) + numberlist.get(0);
+        int temp = 1;
         while (temp <= max) {
             numberlist.add(temp);
             int last = numberlist.size();
-            temp = numberlist.get(last - 1) + numberlist.get(last - 2);
+            if(last == 1) temp = 1;
+            else temp = numberlist.get(last - 1) + numberlist.get(last - 2);
         }
         return numberlist;
     }
@@ -344,22 +344,13 @@ public class Algoritma {
     }
 
     /**
-     *
-     * @param OctalNumber
-     * @return
+     * Konversi Hexa to Octal
+     * @param nilaihex nilai dari hexa
+     * @return mengembalikan nilai Octal
      */
     public int hex2octal(String nilaihex) {
      String a = hexToBinary(nilaihex);
-       int b = BinarytoOctal(Integer.parseInt(a));
-       
-//int counter = 0;
-        //int result = 0;
-        //while (OctalNumber != 0) {
-          //  int temp = (int) ((OctalNumber % 8) * Math.pow(10, counter));
-            //counter++;
-           // result += temp;
-            //OctalNumber /= 8;
-       // }
+       int b = BinarytoOctal(a);
        return b;
     }
 
@@ -474,14 +465,8 @@ public class Algoritma {
      * @param angkabiner di isi oleh bilangan biner yang akan di konversikan
      * @return mengembalikan data bilangan octal
      */
-    public int BinarytoOctal(int angkabiner) {
-        int angkaoctal = 0, angkadecimal = 0, i = 0;
-        while (angkabiner != 0) {
-            angkadecimal += (angkabiner % 10) * Math.pow(2, i);
-            ++i;
-            angkabiner /= 10;
-        }
-        i = 1;
+    public int BinarytoOctal(String angkabiner) {
+        int angkaoctal = 0, angkadecimal = BinaryToDecimal(angkabiner), i = 1;
         while (angkadecimal != 0) {
             angkaoctal += (angkadecimal % 8) * i;
             angkadecimal /= 8;
@@ -541,10 +526,10 @@ public class Algoritma {
      * @return
      */
     public int oktaltodesimal(String okt) {
-        int nilaiDesimal = 0;
-        for (int i = 0; i < okt.length(); i++) {
+        int nilaiDesimal = 0; 
+        for (int i = 0; i < okt.length(); i++) { 
             char hexChar = okt.charAt(i);
-            nilaiDesimal = nilaiDesimal * 8 + oktalkedesimal(hexChar);
+                nilaiDesimal = nilaiDesimal * 8 + oktalkedesimal(hexChar);
         }
         return nilaiDesimal;
     }

@@ -177,7 +177,7 @@ public class Test {
                  */
                 System.out.println("\n-- Binary to Octal --");
                 System.out.print("Masukkan Bilangan Biner: ");
-                int angkabiner = scp.nextInt();
+                String angkabiner = scp.next();
                 System.out.printf("Nilai Octal :" + algo.BinarytoOctal(angkabiner));
                 break;
             case 11:
