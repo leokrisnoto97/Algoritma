@@ -136,15 +136,10 @@ public class Algoritma {
      * @return hasil merupakan hasil dari hitungan permutasi
      */
     public float Permutasi(float a, float b) {
-        float n = 1, nr = 1, i, j, k;
-        for (i = a; i >= 1; i--) {
-            n *= i;
-        }
-        j = (a - b);
-        for (k = j; k >= 1; k--) {
-            nr *= k;
-        }
-        float hasil = n / nr;
+        float n=Faktorial((int) a);
+        float j=(a-b);
+        float nr=Faktorial((int) j);
+        float hasil=n/nr;
         return hasil;
     }
 
@@ -157,18 +152,11 @@ public class Algoritma {
      * @return hasil merupakan hasil dari hitungan kombinasi
      */
     public float Kombinasi(float a, float b) {
-        float n = 1, r = 1, nr = 1, i, j, k, l;
-        for (i = a; i >= 1; i--) {
-            n *= i;
-        }
-        for (j = b; j >= 1; j--) {
-            r *= j;
-        }
-        k = (a - b);
-        for (l = k; l >= 1; l--) {
-            nr *= l;
-        }
-        float hasil = n / (r * nr);
+        float n=Faktorial((int) a);
+        float r=Faktorial((int) b);
+        float k = a-b;
+        float nr=Faktorial((int) k);        
+        float hasil=n/(r*nr);
         return hasil;
     }
 
