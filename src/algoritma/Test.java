@@ -23,6 +23,7 @@ public class Test {
         System.out.println("8. Auto Increment");
         System.out.println("9. Auto Decrement");
         System.out.println("10. Konversi Hexadecimal dan Binary ");
+        System.out.println("11. Konversi Desimal dan Oktal ");
         System.out.print("\nPilihan Menu: ");
         int menu = scp.nextInt();
         switch (menu) {
