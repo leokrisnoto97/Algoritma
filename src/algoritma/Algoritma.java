@@ -147,14 +147,17 @@ public class Algoritma {
      */
     public float Pangkat(float x, float y){
         float hasil=x;
-        int i;
-         if (y>0){
+           int i;
+            if(y==0){
+                hasil=1;
+                return hasil;}
+            else if (y>0){
             for (i = 1; i < y; i++)hasil*=x;
             return hasil;
-        }else
+            }else
             for (i = 1; i < y*-1; i++)hasil*=x;
             hasil= 1/hasil;
-            return hasil;  
+            return hasil;     
     }
    
 }
