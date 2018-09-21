@@ -1,17 +1,16 @@
 package algoritma;
 
-
 import java.util.*;
 import java.util.List;
 import java.util.Scanner;
 
 public class Test {
-   
-    public static void main(String[] args) {        
-    /**
-     * @param args the command line arguments
-     */
-        Algoritma algo = new Algoritma();   
+
+    public static void main(String[] args) {
+        /**
+         * @param args the command line arguments
+         */
+        Algoritma algo = new Algoritma();
         Scanner scp = new Scanner(System.in);
         System.out.println("--Selamat Datang di Menu Algoritma, Silahkan Pilih Menu!--");
         System.out.println("1. Cek Bilangan Prima");
@@ -23,38 +22,40 @@ public class Test {
         System.out.println("7. Hitung Pangkat");
         System.out.println("8. Auto Increment");
         System.out.println("9. Auto Decrement");
+        System.out.println("10. Konversi Hexadecimal dan Binary ");
         System.out.print("\nPilihan Menu: ");
         int menu = scp.nextInt();
-        switch(menu){
+        switch (menu) {
             case 1:
                 /**
-                * Penggunaan Method isPrima
-                */
+                 * Penggunaan Method isPrima
+                 */
                 int paramprima = 0;
                 System.out.println("\n--BILANGAN PRIMA ATAU BUKAN PRIMA--");
-                do
-                {
+                do {
                     System.out.print("Enter bilangan: ");
                     paramprima = scp.nextInt();
-                }while(paramprima < 2);
+                } while (paramprima < 2);
                 System.out.print(paramprima + " adalah bilangan: ");
                 System.out.println(algo.isPrima(paramprima));
                 break;
             case 2:
                 /**
-                * Penggunaan Method getFibonacci
-                */
+                 * Penggunaan Method getFibonacci
+                 */
                 System.out.println("\n--FIBONACCI NUMBER--");
                 System.out.print("Batas maksimum: ");
                 int paramfibo = scp.nextInt();
                 List<Integer> listFibo = algo.getFibonacci(paramfibo);
-                for(int i = 0; i < listFibo.size(); i++) System.out.print(listFibo.get(i) + " ");
+                for (int i = 0; i < listFibo.size(); i++) {
+                    System.out.print(listFibo.get(i) + " ");
+                }
                 System.out.println("");
                 break;
             case 3:
                 /**
-                * Memanggil Fungsi Hitung Pecahan
-                */
+                 * Memanggil Fungsi Hitung Pecahan
+                 */
                 System.out.println("\n-- HITUNG PECAHAN --");
                 System.out.print("Masukkan nominal uang : ");
                 int nominal = scp.nextInt();
@@ -62,44 +63,44 @@ public class Test {
                 break;
             case 4:
                 /**
-                * memasukkan jumlah random yang akan ditampilkan
-                * memanggil method random_char dari kelas Algoritma.java
-                */
+                 * memasukkan jumlah random yang akan ditampilkan memanggil
+                 * method random_char dari kelas Algoritma.java
+                 */
                 System.out.print("jumlah random : ");
                 int jumlah = scp.nextInt();
                 System.out.println(algo.random_char(jumlah));
                 break;
             case 5:
                 /**
-                * Melakukan input angka yang ingin dihitung faktorialnya
-                * Memanggil fungsi Faktorial
-                */
+                 * Melakukan input angka yang ingin dihitung faktorialnya
+                 * Memanggil fungsi Faktorial
+                 */
                 System.out.println("Masukkan angka: ");
-                int n= scp.nextInt();
+                int n = scp.nextInt();
                 System.out.println(algo.Faktorial(n));
                 break;
             case 6:
                 /**
-                * Melakukan input nilai n dan r yang akan dihitung permutasi dan kombinasinya
-                * Memanggil fungsi Permutasi dan Kombinasi
-                */
+                 * Melakukan input nilai n dan r yang akan dihitung permutasi
+                 * dan kombinasinya Memanggil fungsi Permutasi dan Kombinasi
+                 */
                 System.out.println("Masukkan n: ");
-                float a= scp.nextFloat();
+                float a = scp.nextFloat();
                 System.out.println("Masukkan r: ");
-                float b= scp.nextFloat();
-                System.out.println("Permutasi: "+algo.Permutasi(a,b));
-                System.out.println("Kombinasi: "+algo.Kombinasi(a,b));
+                float b = scp.nextFloat();
+                System.out.println("Permutasi: " + algo.Permutasi(a, b));
+                System.out.println("Kombinasi: " + algo.Kombinasi(a, b));
                 break;
             case 7:
                 /**
-                * Melakukan input bilangan beserta bilangan pangkatnya
-                * Memanggil fungsi Pangkat
-                */
+                 * Melakukan input bilangan beserta bilangan pangkatnya
+                 * Memanggil fungsi Pangkat
+                 */
                 System.out.println("Masukkan bilangan: ");
-                float x=scp.nextFloat();
+                float x = scp.nextFloat();
                 System.out.println("Masukkan pangkat: ");
-                float y=scp.nextFloat();
-                System.out.println("Hasil dari bil "+x+" pangkat "+y+" adalah "+algo.Pangkat(x,y));
+                float y = scp.nextFloat();
+                System.out.println("Hasil dari bil " + x + " pangkat " + y + " adalah " + algo.Pangkat(x, y));
                 break;
             case 8:
                 /**
@@ -110,9 +111,9 @@ public class Test {
                 System.out.println("Maksimum : ");
                 int max = scp.nextInt();
                 System.out.println("Banyak Digit : ");
-                int digit = scp.nextInt();  
-                
-                System.out.println(algo.increment(min,max,digit));
+                int digit = scp.nextInt();
+
+                System.out.println(algo.increment(min, max, digit));
                 break;
             case 9:
                 /**
@@ -125,9 +126,59 @@ public class Test {
                 System.out.println("Banyak Digit : ");
                 digit = scp.nextInt();
 
-                System.out.println(algo.decrement(min,max,digit));
+                System.out.println(algo.decrement(min, max, digit));
                 break;
-                
+            case 10:
+                /**
+                 * Untuk Memanggil Fungsi Hexadecimal to Decimal
+                 */
+                System.out.println("\n-- Hexadecimal to Decimal --");
+                System.out.print("Masukkan Bilangan Hexadesimal: ");
+                String hexadecimal = scp.next();
+                System.out.println("Nilai desimal untuk angka hexadesimal " + hexadecimal + " adalah " + algo.konversiHexadecimal(hexadecimal.toUpperCase()));
+
+                /**
+                 * Untuk Memanggil Fungsi Hexadecimal to Binary
+                 */
+                String result;
+                System.out.println("\n-- Hexadecimal to Binary --");
+                System.out.print("Masukkan Bilangan Hexadesimal: ");
+                String hex = scp.next();
+                result = algo.hexToBinary(hex);
+                System.out.println("Binary of " + hex + ":" + result);
+
+                /**
+                 * Untuk Memanggil Fungsi Hexadecimal to Octal
+                 */
+                System.out.println("\n-- Hexadecimal to Octal --");
+                System.out.print("Masukkan Bilangan Hexadesimal: ");
+                String octal = scp.next();
+                System.out.println("Nilai desimal untuk angka Octal " + octal + " adalah " + algo.hex2decimal(octal.toUpperCase()));
+
+                /**
+                 * Untuk Memanggil Fungsi Binary to Hexadecimal
+                 */
+                System.out.println("\n-- Binary to Hexa --");
+                System.out.print("Masukkan Bilangan Biner: ");
+                String binerhexa = scp.next();
+                System.out.println("Nilai Hexa untuk bilangan Biner " + binerhexa + " adalah " + algo.BinaryToHexadecimal(binerhexa));
+
+                /**
+                 * Untuk Memanggil Fungsi Binary to Decimal
+                 */
+                System.out.println("\n-- Binary to Decimal --");
+                System.out.print("Masukkan Bilangan Binary: ");
+                int binary = scp.nextInt();
+                System.out.println("Nilai Decimal: " + algo.toDecimal(binary));
+
+                /**
+                 * Untuk Memanggil Fungsi Binary to Octal
+                 */
+                System.out.println("\n-- Binary to Octal --");
+                System.out.print("Masukkan Bilangan Biner: ");
+                int angkabiner = scp.nextInt();
+                System.out.printf("Nilai Octal :" + algo.BinarytoOctal(angkabiner));
+                break;
             default:
                 System.out.println("Nomor yang anda pilih tidak ada dalam menu.");
                 break;
