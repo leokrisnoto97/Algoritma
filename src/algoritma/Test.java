@@ -179,6 +179,34 @@ public class Test {
                 int angkabiner = scp.nextInt();
                 System.out.printf("Nilai Octal :" + algo.BinarytoOctal(angkabiner));
                 break;
+            case 11:
+                System.out.print("Inputkan angka Desimal : ");
+                int des = scp.nextInt();
+
+                System.out.print("Inputan to binner = ");
+                algo.desimaltobinner(des);
+                System.out.println("");
+                System.out.print("Inputan to Oktal  = ");
+                algo.desimaltookta(des);
+                System.out.println("");
+                System.out.print("Inputan to Heksa  = ");
+                algo.desimaltohexa(des);
+                System.out.println("");
+                System.out.println("");
+                System.out.print("Inputkan bilangan Oktal = ");
+                String okt = scp.next();
+                System.out.print("Oktal = " + okt + " to Desimal = ");
+                System.out.print(algo.oktaltodesimal(okt));
+                System.out.println("");
+                int be = algo.oktaltodesimal(okt);
+                System.out.print("Oktal = " + okt + " to Hexa = ");
+                algo.oktaltohexa(be);
+                System.out.println("");
+                System.out.print("Oktal = " + okt + " to Binner = ");
+                algo.oktaltobinner(be);
+                System.out.println("");
+
+                break;
             default:
                 System.out.println("Nomor yang anda pilih tidak ada dalam menu.");
                 break;

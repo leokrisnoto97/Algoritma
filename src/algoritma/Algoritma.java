@@ -488,5 +488,111 @@ public class Algoritma {
         }
         return angkaoctal;
     }
+    /**
+     * des2bin
+     *
+     * @param a untuk menambil inputan angka desimal
+     * @return
+     */
+    public int desimaltobinner(int a) {
+        if (a > 1) {
+            desimaltobinner(a / 2);
+        }
+        System.out.print(a % 2);
+        return 0;
+    }
+
+    /**
+     * des2okt
+     *
+     * @param a untuk mengambil inputan angka desimal
+     * @return
+     */
+    public int desimaltookta(int a) {
+        char[] daftarOktal = {'0', '1', '2', '3', '4', '5', '6', '7'};
+        if (a > 0) {
+            desimaltookta(a / 8);
+            System.out.print(daftarOktal[a % 8]);
+        }
+        return 0;
+    }
+
+    /**
+     * des2hex
+     *
+     * @param n untuk mengambil inputan angka desimal
+     * @return
+     */
+    public int desimaltohexa(int n) {
+        char[] daftarHexa = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+        if (n > 0) {
+            desimaltohexa(n / 16);
+            System.out.print(daftarHexa[n % 16]);
+        }
+        return 0;
+    }
+
+    /**
+     * okt2des
+     *
+     * @param okt mengambil inputan dari oktal yang dicaba berupa karakter untuk
+     * di konversi ke integer
+     * @return
+     */
+    public int oktaltodesimal(String okt) {
+        int nilaiDesimal = 0;
+        for (int i = 0; i < okt.length(); i++) {
+            char hexChar = okt.charAt(i);
+            nilaiDesimal = nilaiDesimal * 8 + oktalkedesimal(hexChar);
+        }
+        return nilaiDesimal;
+    }
+
+    /**
+     * Method untuk mengembalikan nilai desimal dari hex character
+     */
+    /**
+     * okt2desi
+     *
+     * @param ch untuk mengambil dan membaca inputan berupa karakter
+     * @return
+     */
+    public int oktalkedesimal(char ch) {
+        if (ch >= '7') {
+            return 8 + ch - '8';
+        } else // ch adalah '0', '1', ..., atau '9'  
+        {
+            return ch - '0';
+        }
+    }
+
+    /**
+     * okt2hex
+     *
+     * @param n untuk mengambil inputan dari hasil konversi oktal ke desimal
+     * @return
+     */
+    public int oktaltohexa(int n) {
+        char[] daftarHexa = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+        if (n > 0) {
+            oktaltohexa(n / 16);
+            System.out.print(daftarHexa[n % 16]);
+        }
+        return 0;
+    }
+
+    /**
+     * okt2bin
+     *
+     * @param a untuk mengambil data hasil dari konversi oktal to desimal
+     * @return
+     */
+    public int oktaltobinner(int a) {
+        if (a > 1) {
+            oktaltobinner(a / 2);
+        }
+        System.out.print(a % 2);
+        return 0;
+    }
 
 }
