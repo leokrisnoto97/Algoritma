@@ -21,7 +21,8 @@ public class Test {
         System.out.println("5. Bilangan Faktorial");
         System.out.println("6. Hitung Permutasi dan Kombinasi");
         System.out.println("7. Hitung Pangkat");
-        System.out.println("8. Auto Increment & Decrement");
+        System.out.println("8. Auto Increment");
+        System.out.println("9. Auto Decrement");
         System.out.print("\nPilihan Menu: ");
         int menu = scp.nextInt();
         switch(menu){
@@ -101,25 +102,32 @@ public class Test {
                 System.out.println("Hasil dari bil "+x+" pangkat "+y+" adalah "+algo.Pangkat(x,y));
                 break;
             case 8:
-                System.out.println("Inc / Dec : ");
-                String pilihan = scp.nextLine();
+                /**
+                 * Memanggil fungsi Increment
+                 */
                 System.out.println("Minimum : ");
                 int min = scp.nextInt();
                 System.out.println("Maksimum : ");
                 int max = scp.nextInt();
                 System.out.println("Banyak Digit : ");
-                int digit = scp.nextInt();
-
-                if(pilihan.equals("Inc") || pilihan.equals("inc")){
-                    System.out.println(algo.increment(min,max,digit));
-                }
-                else if(pilihan.equals("Dec") || pilihan.equals("dec")){
-                    System.out.println(algo.decrement(min,max,digit));
-                }
-                else{
-                    System.out.println("Masukan pilihan Inc atau Dec");
-                }
+                int digit = scp.nextInt();  
+                
+                System.out.println(algo.increment(min,max,digit));
                 break;
+            case 9:
+                /**
+                 * Memanggil fungsi Decrement
+                 */
+                System.out.println("Minimum : ");
+                min = scp.nextInt();
+                System.out.println("Maksimum : ");
+                max = scp.nextInt();
+                System.out.println("Banyak Digit : ");
+                digit = scp.nextInt();
+
+                System.out.println(algo.decrement(min,max,digit));
+                break;
+                
             default:
                 System.out.println("Nomor yang anda pilih tidak ada dalam menu.");
                 break;
