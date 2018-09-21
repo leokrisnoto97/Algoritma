@@ -100,8 +100,7 @@ public class Algoritma {
      * @return x hasil faktorial dari bilangan n
      */
     public int Faktorial(int n){
-        int x=1;
-        int i;
+        int x=1, i;
         for(i=n; i>=1; i--) x*=i;
         return x;
     } 
@@ -112,9 +111,7 @@ public class Algoritma {
      * @return hasil merupakan hasil dari hitungan permutasi
      */
     public float Permutasi(float a, float b){
-        float n=1;
-        float nr=1;
-        float i,j,k;
+        float n=1, nr=1, i, j, k;
         for(i=a; i>=1; i--)n*=i;
         j=(a-b);
         for(k=j; k>=1; k--)nr*=k;
@@ -128,10 +125,7 @@ public class Algoritma {
      * @return hasil merupakan hasil dari hitungan kombinasi
      */
     public float Kombinasi(float a, float b){
-        float n=1;
-        float r=1;
-        float nr=1;
-        float i,j,k,l;
+        float n=1, r=1, nr=1, i, j, k, l;
         for(i=a; i>=1; i--)n*=i;
         for(j=b; j>=1; j--)r*=j;
         k=(a-b);
@@ -157,7 +151,7 @@ public class Algoritma {
             }else
             for (i = 1; i < y*-1; i++)hasil*=x;
             hasil= 1/hasil;
-            return hasil;     
+            return hasil;      
     }
     
     /**
