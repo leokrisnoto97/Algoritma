@@ -207,7 +207,6 @@ public class Test {
                 System.out.print("Inputan to Binner = ");
                 algo.oktaltobinner(be);
                 System.out.println("");
-
                 break;
             default:
                 System.out.println("Nomor yang anda pilih tidak ada dalam menu.");
