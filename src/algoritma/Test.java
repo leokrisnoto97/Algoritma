@@ -196,14 +196,14 @@ public class Test {
                 System.out.println("");
                 System.out.print("Inputkan bilangan Oktal = ");
                 String okt = scp.next();
-                System.out.print("Oktal = " + okt + " to Desimal = ");
+                System.out.print("To Desimal = ");
                 System.out.print(algo.oktaltodesimal(okt));
                 System.out.println("");
                 int be = algo.oktaltodesimal(okt);
-                System.out.print("Oktal = " + okt + " to Hexa = ");
+                System.out.print("To Hexa = ");
                 algo.oktaltohexa(be);
                 System.out.println("");
-                System.out.print("Oktal = " + okt + " to Binner = ");
+                System.out.print("To Binner = ");
                 algo.oktaltobinner(be);
                 System.out.println("");
 
