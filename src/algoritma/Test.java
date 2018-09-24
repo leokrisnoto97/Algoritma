@@ -12,6 +12,8 @@ public class Test {
          */
         Algoritma algo = new Algoritma();
         Scanner scp = new Scanner(System.in);
+        boolean mn = false;
+        do{
         System.out.println("--Selamat Datang di Menu Algoritma, Silahkan Pilih Menu!--");
         System.out.println("1. Cek Bilangan Prima");
         System.out.println("2. Fibonacci Number");
@@ -212,5 +214,8 @@ public class Test {
                 System.out.println("Nomor yang anda pilih tidak ada dalam menu.");
                 break;
         }
+            System.out.print("Kembali ke main menu(y/t): ");
+            mn = scp.next().equals("y");
+        }while(mn == true);
     }
 }
