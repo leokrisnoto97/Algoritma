@@ -62,7 +62,9 @@ public class Test {
                 System.out.println("\n-- HITUNG PECAHAN --");
                 System.out.print("Masukkan nominal uang : ");
                 int nominal = scp.nextInt();
-                System.out.println(algo.HitungPecahan(nominal));
+                algo.hitungPecahan(nominal).forEach((hm) -> {
+                    System.out.println(Arrays.toString(hm));
+                });
                 break;
             case 4:
                 /**
@@ -109,44 +111,41 @@ public class Test {
                 /**
                  * Memanggil fungsi Increment
                  */
-                System.out.println("Minimum : ");
+                System.out.print("Minimum : ");
                 int min = scp.nextInt();
-                System.out.println("Maksimum : ");
+                System.out.print("Maksimum : ");
                 int max = scp.nextInt();
-                System.out.println("Banyak Digit : ");
+                System.out.print("Banyak Digit : ");
                 int digit = scp.nextInt();
-
+                System.out.println("--INCREMENT--");
                 System.out.println(algo.increment(min, max, digit));
                 break;
             case 9:
                 /**
                  * Memanggil fungsi Decrement
                  */
-                System.out.println("Minimum : ");
+                System.out.print("Minimum : ");
                 min = scp.nextInt();
-                System.out.println("Maksimum : ");
+                System.out.print("Maksimum : ");
                 max = scp.nextInt();
-                System.out.println("Banyak Digit : ");
+                System.out.print("Banyak Digit : ");
                 digit = scp.nextInt();
-
                 System.out.println(algo.decrement(min, max, digit));
                 break;
             case 10:
                 /**
                  * Untuk Memanggil Fungsi Hexadecimal to Decimal
                  */
-                System.out.println("\n-- Hexadecimal to Decimal --");
                 System.out.print("Masukkan Bilangan Hexadesimal: ");
-                String hexadecimal = scp.next();
-                System.out.println("Nilai desimal untuk angka hexadesimal " + hexadecimal + " adalah " + algo.konversiHexadecimal(hexadecimal.toUpperCase()));
+                String hex = scp.next();
+                System.out.println("\n-- Hexadecimal to Decimal --");
+                System.out.println("Nilai desimal untuk angka hexadesimal " + hex+ " adalah " + algo.konversiHexadecimal(hex.toUpperCase()));
 
                 /**
                  * Untuk Memanggil Fungsi Hexadecimal to Binary
                  */
                 String result;
                 System.out.println("\n-- Hexadecimal to Binary --");
-                System.out.print("Masukkan Bilangan Hexadesimal: ");
-                String hex = scp.next();
                 result = algo.hexToBinary(hex);
                 System.out.println("Binary of " + hex + ":" + result);
 
@@ -154,46 +153,40 @@ public class Test {
                  * Untuk Memanggil Fungsi Hexadecimal to Octal
                  */
                 System.out.println("\n-- Hexadecimal to Octal --");
-                System.out.print("Masukkan Bilangan Hexadesimal: ");
-                String octal = scp.next();
-                System.out.println("Nilai desimal untuk angka Octal " + octal + " adalah " + algo.hex2octal(octal.toUpperCase()));
+                System.out.println("Nilai desimal untuk angka Octal " + hex + " adalah " + algo.hex2octal(hex.toUpperCase()));
 
                 /**
                  * Untuk Memanggil Fungsi Binary to Hexadecimal
                  */
-                System.out.println("\n-- Binary to Hexa --");
                 System.out.print("Masukkan Bilangan Biner: ");
-                String binerhexa = scp.next();
-                System.out.println("Nilai Hexa untuk bilangan Biner " + binerhexa + " adalah " + algo.BinaryToHexadecimal(binerhexa));
+                String biner = scp.next();
+                System.out.println("\n-- Binary to Hexa --");
+                System.out.println("Nilai Hexa untuk bilangan Biner " + biner + " adalah " + algo.BinaryToHexadecimal(biner));
 
                 /**
                  * Untuk Memanggil Fungsi Binary to Decimal
                  */
                 System.out.println("\n-- Binary to Decimal --");
-                System.out.print("Masukkan Bilangan Binary: ");
-                int binary = scp.nextInt();
-                System.out.println("Nilai Decimal: " + algo.toDecimal(binary));
+                System.out.println("Nilai Decimal: " + algo.toDecimal(Long.parseLong(biner)));
 
                 /**
                  * Untuk Memanggil Fungsi Binary to Octal
                  */
                 System.out.println("\n-- Binary to Octal --");
-                System.out.print("Masukkan Bilangan Biner: ");
-                String angkabiner = scp.next();
-                System.out.printf("Nilai Octal :" + algo.BinarytoOctal(angkabiner));
+                System.out.println("Nilai Octal :" + algo.BinarytoOctal(biner));
                 break;
             case 11:
                 System.out.print("Inputkan angka Desimal : ");
                 int des = scp.nextInt();
 
                 System.out.print("Inputan to binner = ");
-                algo.desimaltobinner(des);
+                System.out.println(algo.desimaltobinner(des));
                 System.out.println("");
                 System.out.print("Inputan to Oktal  = ");
-                algo.desimaltookta(des);
+                System.out.println(algo.desimaltookta(des));
                 System.out.println("");
                 System.out.print("Inputan to Heksa  = ");
-                algo.desimaltohexa(des);
+                System.out.println(algo.desimaltohexa(des));
                 System.out.println("");
                 System.out.println("");
                 System.out.print("Inputkan bilangan Oktal = ");

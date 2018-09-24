@@ -25,16 +25,9 @@ public class Algoritma {
     public String isPrima(int bilangan) {
         String jenis = "";
         int ctr = 0;
-        for (int i = 2; i <= bilangan; i++) {
-            if (bilangan % i == 0) {
-                ctr++;
-            }
-        }
-        if (ctr > 1) {
-            jenis = "Bukan Prima";
-        } else {
-            jenis = "Prima";
-        }
+        for (int i = 2; i <= bilangan; i++) if (bilangan % i == 0)ctr++;
+        if (ctr > 1) jenis = "Bukan Prima";
+        else jenis = "Prima";
         return jenis;
     }
 
@@ -62,29 +55,16 @@ public class Algoritma {
      * @param nominal - besar nominal uang yang akan dihitung (dalam rupiah)
      * @return hasil hitung pecahan berdasarkan mata uang yang beredar
      */
-    public String HitungPecahan(int nominal) {
-        String[] pecahan = {"100", "200", "500", "1.000", "2.000", "5.000", "10.000", "20.000", "50.000", "100.000"};
-        String hasil = "", koin = " koin Rp. ", lembar = " lembar Rp. ";
-        if (nominal < 200) {
-            hasil = (nominal / 100) + koin + pecahan[0] + "\n";
-        } else if (nominal < 500) {
-            hasil = HitungPecahan(nominal % 200) + (nominal / 200) + koin + pecahan[1] + "\n";
-        } else if (nominal < 1000) {
-            hasil = HitungPecahan(nominal % 500) + (nominal / 500) + koin + pecahan[2] + "\n";
-        } else if (nominal < 2000) {
-            hasil = HitungPecahan(nominal % 1000) + (nominal / 1000) + lembar + pecahan[3] + "\n";
-        } else if (nominal < 5000) {
-            hasil = HitungPecahan(nominal % 2000) + (nominal / 2000) + lembar + pecahan[4] + "\n";
-        } else if (nominal < 10000) {
-            hasil = HitungPecahan(nominal % 5000) + (nominal / 5000) + lembar + pecahan[5] + "\n";
-        } else if (nominal < 20000) {
-            hasil = HitungPecahan(nominal % 10000) + (nominal / 10000) + lembar + pecahan[6] + "\n";
-        } else if (nominal < 50000) {
-            hasil = HitungPecahan(nominal % 20000) + (nominal / 20000) + lembar + pecahan[7] + "\n";
-        } else if (nominal < 100000) {
-            hasil = HitungPecahan(nominal % 50000) + (nominal / 50000) + lembar + pecahan[8] + "\n";
-        } else if (nominal >= 100000) {
-            hasil = HitungPecahan(nominal % 100000) + (nominal / 100000) + lembar + pecahan[9];
+    public static List<int[]> hitungPecahan(int i)
+    {
+        List<int[]> hasil = new ArrayList<>();
+        int[] pembagi = new int[]{100000, 50000, 20000, 10000, 5000, 2000, 1000, 500, 200, 100};
+        int j = 0, a, b = i;
+        while(b!=0){
+            a = b/pembagi[j];
+            b %= pembagi[j];
+            hasil.add(new int[]{pembagi[j],a});
+            j++;
         }
         return hasil;
     }
@@ -195,17 +175,11 @@ public class Algoritma {
      * @param c nilai digit
      * @return mengembalikan String kosong
      */
-    public static String increment(int a, int b, int c) {
-        String nol = "";
-        String inc = "";
-        for (int i = 0; i < c; i++) {
-            nol = nol + 0;
-        }
-        for (int i = a; i <= b; i++) {
-            inc = nol.substring(0, nol.length() - Integer.toString(i).length()) + Integer.toString(i);
-            System.out.println(inc);
-        }
-        return "";
+    public String increment(int a, int b, int c) {
+        String nol = "", inc = "";
+        for (int i = 0; i < c; i++) nol += 0;
+        for (int i = a; i <= b; i++) inc += nol.substring(0, nol.length() - Integer.toString(i).length()) + Integer.toString(i); 
+        return inc;
     }
 
     /**
@@ -216,17 +190,11 @@ public class Algoritma {
      * @param c nilai digit
      * @return mengembalikan String kosong
      */
-    public static String decrement(int a, int b, int c) {
-        String nol = "";
-        String dec = "";
-        for (int i = 0; i < c; i++) {
-            nol = nol + 0;
-        }
-        for (int i = b; i >= a; i--) {
-            dec = nol.substring(0, nol.length() - Integer.toString(i).length()) + Integer.toString(i);
-            System.out.println(dec);
-        }
-        return "";
+    public String decrement(int a, int b, int c) {
+        String nol = "", dec = "";
+        for (int i = 0; i < c; i++)  nol = nol + 0;
+        for (int i = b; i >= a; i--) dec += nol.substring(0, nol.length() - Integer.toString(i).length()) + Integer.toString(i) + "\n";
+        return dec;
     }
 
     /**
@@ -431,14 +399,14 @@ public class Algoritma {
      * @param binary mengambil data Binary
      * @return untuk mengembalikan data decimal
      */
-    public int toDecimal(int binary) {
+    public int toDecimal(long binary) {
         int decimal = 0;
         int n = 0;
         while (true) {
             if (binary == 0) {
                 break;
             } else {
-                int temp = binary % 10;
+                long temp = binary % 10;
                 decimal += temp * Math.pow(2, n);
                 binary = binary / 10;
                 n++;
@@ -468,12 +436,10 @@ public class Algoritma {
      * @param a untuk menambil inputan angka desimal
      * @return
      */
-    public int desimaltobinner(int a) {
-        if (a > 1) {
-            desimaltobinner(a / 2);
-        }
-        System.out.print(a % 2);
-        return 0;
+    public String desimaltobinner(int a) {
+        String hasil = "";
+        if (a > 0) hasil += desimaltobinner(a / 2) + String.valueOf(a % 2);
+        return hasil;
     }
 
     /**
@@ -482,13 +448,11 @@ public class Algoritma {
      * @param a untuk mengambil inputan angka desimal
      * @return
      */
-    public int desimaltookta(int a) {
+    public String desimaltookta(int a) {
+        String hasil = "";
         char[] daftarOktal = {'0', '1', '2', '3', '4', '5', '6', '7'};
-        if (a > 0) {
-            desimaltookta(a / 8);
-            System.out.print(daftarOktal[a % 8]);
-        }
-        return 0;
+        if (a > 0) hasil += desimaltookta(a / 8)+ String.valueOf(daftarOktal[a % 8]);
+        return hasil;
     }
 
     /**
@@ -497,15 +461,12 @@ public class Algoritma {
      * @param n untuk mengambil inputan angka desimal
      * @return
      */
-    public int desimaltohexa(int n) {
+    public String desimaltohexa(int n) {
+        String hasil = "";
         char[] daftarHexa = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
-        if (n > 0) {
-            desimaltohexa(n / 16);
-            System.out.print(daftarHexa[n % 16]);
-        }
-        return 0;
+        if (n > 0) hasil += desimaltohexa(n / 16) + String.valueOf(daftarHexa[n % 16]);
+        return hasil;
     }
-
     /**
      * okt2des
      *
@@ -546,13 +507,11 @@ public class Algoritma {
      * @param n untuk mengambil inputan dari hasil konversi oktal ke desimal
      * @return
      */
-    public int oktaltohexa(int n) {
+    public String oktaltohexa(int n) {
+        String hasil = "";
         char[] daftarHexa = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
-        if (n > 0) {
-            oktaltohexa(n / 16);
-            System.out.print(daftarHexa[n % 16]);
-        }
-        return 0;
+        if (n > 0) hasil += oktaltohexa(n / 16) + daftarHexa[n % 16];
+        return hasil;
     }
 
     /**
