@@ -483,9 +483,7 @@ public class Algoritma {
         return nilaiDesimal;
     }
 
-    /**
-     * Method untuk mengembalikan nilai desimal dari hex character
-     */
+
     /**
      * okt2desi
      *

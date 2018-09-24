@@ -28,6 +28,7 @@ public class Test {
         System.out.println("11. Konversi Desimal dan Oktal ");
         System.out.print("\nPilihan Menu: ");
         int menu = scp.nextInt();
+    
         switch (menu) {
             case 1:
                 /**
@@ -191,17 +192,16 @@ public class Test {
                 System.out.println("");
                 System.out.print("Inputkan bilangan Oktal = ");
                 String okt = scp.next();
-                System.out.print("Oktal = " + okt + " to Desimal = ");
+                System.out.print("Inputan to Desimal = ");
                 System.out.print(algo.oktaltodesimal(okt));
                 System.out.println("");
                 int be = algo.oktaltodesimal(okt);
-                System.out.print("Oktal = " + okt + " to Hexa = ");
+                System.out.print("Inputan to Hexa = ");
                 algo.oktaltohexa(be);
                 System.out.println("");
-                System.out.print("Oktal = " + okt + " to Binner = ");
+                System.out.print("Inputan to Binner = ");
                 algo.oktaltobinner(be);
                 System.out.println("");
-
                 break;
             default:
                 System.out.println("Nomor yang anda pilih tidak ada dalam menu.");
