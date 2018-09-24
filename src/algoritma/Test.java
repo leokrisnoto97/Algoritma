@@ -177,30 +177,20 @@ public class Test {
                 System.out.println("Nilai Octal :" + algo.BinarytoOctal(biner));
                 break;
             case 11:
-                System.out.print("Inputkan angka Desimal : ");
+                System.out.println("");
+                System.out.print("Inputkan Bilangan : ");
                 int des = scp.nextInt();
-
-                System.out.print("Inputan to binner = ");
-                System.out.println(algo.desimaltobinner(des));
                 System.out.println("");
-                System.out.print("Inputan to Oktal  = ");
-                System.out.println(algo.desimaltookta(des));
+                System.out.println("Desimal to Biner = "+algo.desimaltoall(des, 2));
+                System.out.println("Desimal to Oktal = "+algo.desimaltoall(des, 8));
+                System.out.println("Desimal to Hexa = "+algo.desimaltoall(des, 16));
                 System.out.println("");
-                System.out.print("Inputan to Heksa  = ");
-                System.out.println(algo.desimaltohexa(des));
-                System.out.println("");
-                System.out.println("");
-                System.out.print("Inputkan bilangan Oktal = ");
+                System.out.print("Inputkan Bilangan Oktal: ");
                 String okt = scp.next();
-                System.out.print("Inputan to Desimal = ");
-                System.out.print(algo.oktaltodesimal(okt));
-                System.out.println("");
-                int be = algo.oktaltodesimal(okt);
-                System.out.print("Inputan to Hexa = ");
-                algo.oktaltohexa(be);
-                System.out.println("");
-                System.out.print("Inputan to Binner = ");
-                algo.oktaltobinner(be);
+                System.out.println("Oktal to Desimal = "+algo.oktaltodesimal(okt));
+                int dess = algo.oktaltodesimal(okt);
+                System.out.println("Oktal to Biner = "+algo.desimaltoall(dess, 2));
+                System.out.println("Oktal to Hexa = "+algo.desimaltoall(dess, 16));
                 System.out.println("");
                 break;
             default:
